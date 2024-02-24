@@ -1,3 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
+from .models import district, vote
+
+admin.site.register(district)
+admin.site.register(vote)
