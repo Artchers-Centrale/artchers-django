@@ -4,8 +4,8 @@ from django.db import models
 
 class district(models.Model):
     nom = models.CharField(max_length=200)
-    image = models.FileField(upload_to="district_src")
-    image_el = models.FileField(upload_to="district_src")
+    image = models.FileField(upload_to="images")
+    image_el = models.FileField(upload_to="images")
     is_eliminated = models.BooleanField(default=False)
 
     def __str__(self) -> str:

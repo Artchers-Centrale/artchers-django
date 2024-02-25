@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.0/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -34,6 +35,7 @@ INSTALLED_APPS = [
     'tailwind',
     'theme',
     'artchers',
+    'django_node_assets',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,7 +59,7 @@ ROOT_URLCONF = 'artcherssite.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -65,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.media',
             ],
         },
     },
@@ -135,3 +138,14 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
+MEDIA_URL = "/district_src/"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'district_src').replace('\\', '/')
+
+STATICFILES_FINDERS = [
+    'django.contrib.staticfiles.finders.FileSystemFinder',
+    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    'django_node_assets.finders.NodeModulesFinder',
+]
+
+NODE_PACKAGE_JSON =  os.path.join(BASE_DIR, 'package.json')
+NODE_MODULES_ROOT = os.path.join(BASE_DIR, 'node_modules')
