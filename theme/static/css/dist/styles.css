@@ -916,6 +916,10 @@ select {
   background-color: rgb(187 156 69 / var(--tw-bg-opacity));
 }
 
+.bg-repeat {
+  background-repeat: repeat;
+}
+
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
@@ -1055,6 +1059,10 @@ select {
 
 .duration-500 {
   transition-duration: 500ms;
+}
+
+.bg-mosaique {
+  background-image: url(./mosaique.png);
 }
 
 .hover\:bg-primary:hover {

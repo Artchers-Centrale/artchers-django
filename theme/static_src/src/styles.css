@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.bg-mosaique {
+    background-image: url(./mosaique.png);
+}
