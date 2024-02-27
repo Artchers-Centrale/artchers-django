@@ -91,7 +91,6 @@
             <p class="text-3xl font-semibold text-quaternary py-5">Devise du district, composition</p>
             <p class="text-xl pb-5">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mattis malesuada aliquam. Mauris in felis vel est vestibulum tempor. Vestibulum ante nunc, sodales et risus vel, commodo consequat metus. Vivamus blandit eleifend est, quis aliquet ex egestas facilisis. Morbi sit amet commodo augue. Pellentesque rutrum metus id semper aliquam. Curabitur consectetur egestas sapien vitae fermentum. In ornare neque et varius dapibus. In sapien arcu, egestas sit amet libero sit amet, consectetur elementum enim. Pellentesque ut orci id neque varius ultricies. Suspendisse et vulputate ipsum. In hac habitasse platea dictumst. Curabitur ut justo blandit leo aliquam consequat. Vivamus rhoncus diam enim, at euismod elit porttitor eu. Maecenas congue egestas eros, vel volutpat nisi efficitur gravida.</p>
             <button class="px-5 py-2 bg-secondary border-secondary text-white rounded-lg inline-block box-border border-2 rounded-x1 hover:bg-primary hover:text-secondary duration-1000 h-14 text-2xl">Voter pour ce district</button>
-
         </div>
     </div>
 
@@ -108,6 +107,14 @@
                     <p>Pour confirmer votre vote veuillez remplir ce formulaire :</p>
                     <form method="post">
                         {% csrf_token %}
+                        {{form.nom.label}}
+                        <br>
+                        {{ form.nom }}
+                        <br>
+                        {{form.prenom.label}}
+                        <br>
+                        {{ form.prenom }}
+                        <br>
                         {{form.mail.label}}
                         <br>
                         {{ form.mail }}
@@ -119,7 +126,7 @@
                     <button type="submit" value="Submit" class="bg-green-500 hover:bg-green-700 transition duration-500 text-white font-bold py-2 px-4 rounded mt-4">Envoyer</button>
                     </form>
                     <button id="closeModal" class="bg-blue-500 hover:bg-blue-700 transition duration-500 text-white font-bold py-2 px-4 rounded mt-4">Annuler</button>
-                </div>
+                </div> 
             </div>
         </div>
     

@@ -4,5 +4,6 @@ from . import views
 
 urlpatterns = [
     path("", views.index, name="index"),
-    path("vote", views.vote, name="vote"),
+    path("vote", views.page_vote, name="vote"),
+    path('one_time_link/<str:access_code>', views.one_time_link, name='one_time_link'),
 ]

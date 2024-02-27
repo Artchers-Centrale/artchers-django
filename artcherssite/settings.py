@@ -145,3 +145,11 @@ INTERNAL_IPS = [
 
 MEDIA_URL = "/district_src/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'district_src').replace('\\', '/')
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_HOST = 'ssl0.ovh.net'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'contact@ic-art.fr'
+EMAIL_HOST_PASSWORD = 'Demarchage'

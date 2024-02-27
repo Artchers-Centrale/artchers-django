@@ -18,5 +18,7 @@ def mailCentrale(mail):
 
 
 class voteForm(forms.Form):
-    mail = forms.EmailField(label="Votre mail en xyz@xyz.centralelille.fr", validators=[mailCentrale], max_length=100, widget=forms.TextInput(attrs={'placeholder': 'xyz@xyz.centralelille.fr'}))
+    nom = forms.CharField(label = "Votre nom",max_length=100)
+    prenom = forms.CharField(label = "Votre prénom",max_length=100)
+    mail = forms.EmailField(label="Votre mail en xyz@xyz.centralelille.fr", validators=[mailCentrale], max_length=200, widget=forms.TextInput(attrs={'placeholder': 'xyz@xyz.centralelille.fr'}))
     vote = forms.ModelChoiceField(queryset=district.objects.all(), widget=forms.Select)
