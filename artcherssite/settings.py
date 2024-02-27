@@ -127,6 +127,11 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
+COMPRESS_ROOT = 'artchers/static/'
+
+COMPRESS_ENABLED = True
+
+
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
@@ -140,12 +145,3 @@ INTERNAL_IPS = [
 
 MEDIA_URL = "/district_src/"
 MEDIA_ROOT = os.path.join(BASE_DIR, 'district_src').replace('\\', '/')
-
-STATICFILES_FINDERS = [
-    'django.contrib.staticfiles.finders.FileSystemFinder',
-    'django.contrib.staticfiles.finders.AppDirectoriesFinder',
-    'django_node_assets.finders.NodeModulesFinder',
-]
-
-NODE_PACKAGE_JSON =  os.path.join(BASE_DIR, 'package.json')
-NODE_MODULES_ROOT = os.path.join(BASE_DIR, 'node_modules')

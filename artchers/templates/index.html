@@ -1,5 +1,7 @@
-{% load static tailwind_tags %}
 {% load static %}
+{% load static tailwind_tags %}
+
+
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -17,12 +19,13 @@
     {% tailwind_css %}
 
 </head>
+{%block content%}
 <body class="overflow-x-hidden bg-primary font-bebas">
     
     
     <header class="font-bebas px-10 h-40 py-10">
         <div class="flex flex-row justify-between  place-items-center">
-            <a class="inline-flex gap-2 border rounded-full border-white border-2 px-40 py-3 hover:text-tertiary transition duration-500" href="COUCOU">
+            <a class="inline-flex gap-2 border rounded-full border-white border-2 px-32 py-3 hover:text-tertiary transition duration-500" href="COUCOU">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
                 </svg>
@@ -55,7 +58,10 @@
                     </div>
 
                     <div><img src="{%static 'imgs/main/artchers_texte.png'%}" alt="Artchers" class="max-w-36"></div>
-                    <div class="text-xl">Qui sommes-nous ?</div>
+                    <div class="inline-flex gap-5 text-xl">
+                        <div>Qui sommes-nous ?</div>
+                        <div>Nos sponsors</div>
+                    </div>
                 </div>
             </div>
 
@@ -65,21 +71,15 @@
     </header>
 
     
-        <div class="flex flex-col place-items-center justify-items-center">
-            <div>
-            <div id="caroussel-real" class="splide object-fill w-full">
-                <div class="splide__track container font-montserrat rounded-2xl border-white border-2" >
-                    {%for d in district_sel%}
-                      <ul class="splide__list items-center justify-items-center rounded-lg">
-                        <li class="flex flex-col place-items-stretch splide__slide flex flex-col rounded-lg">
-                          <img src="{{MEDIA_URL}}{{d.image}}" alt="object-cover">
-                        </li>
-                    </ul>
-                      {%endfor%}
-                </div>
-                
-            </div>
-            </div>
+    <div class="grid grid-cols-2 place-items-center px-5">
+        <div class="max-w-screen-sm">
+            <h1 class="text-5xl font-bold text-secondary">Bienvenue sur le site de Artchers !</h1>
+            <p class="text-3xl font-semibold text-quaternary py-5">Liste au bureau des arts de l'Ecole Centrale de Lille 2023-2024</p>
+            <p class="text-2xl pb-5">Nous sommes une liste composée de 24 étudiants passionnés et motivés pour faire de Centrale Lille un lieu d'art et de culture !</p>
+            <button class="px-5 py-2 bg-secondary border-secondary text-white rounded-lg inline-block box-border border-2 rounded-x1 hover:bg-primary hover:text-secondary duration-1000 h-14 text-2xl">Consulter notre programme</button>
+        </div>
+        <div class="max-w-screen-sm">
+            <img src="{%static 'imgs/main/artchers.png'%}" alt="logo liste">
         </div>
     </div>
 
@@ -113,21 +113,41 @@
         </div>
         <div class=" grow border rounded-2xl border-white border-2 px-20 text-center py-3">
             <p class="text-4xl">Etat des votes :</p>
-            <div class="grid grid-cols-4 place-items-center text-center pt-10">
+            <div class="grid grid-cols-9 place-items-center text-center pt-10">
                 <div>
-                    <p class="text-4xl font-bold text-tertiary">Maison une</p>
+                    <p class="text-4xl font-bold text-tertiary">District 1</p>
                     <p class="text-3xl">20%</p>
                 </div>
                 <div>
-                    <p class="text-4xl font-bold text-tertiary">Maison deux</p>
+                    <p class="text-4xl font-bold text-tertiary">District 2</p>
                     <p class="text-3xl">20%</p>
                 </div>
                 <div> 
-                    <p class="text-4xl font-bold text-tertiary">Maison trois</p>
+                    <p class="text-4xl font-bold text-tertiary">District 3</p>
                     <p class="text-3xl">20%</p>
                 </div>
                 <div> 
-                    <p class="text-4xl font-bold text-tertiary">Maison quatre</p>
+                    <p class="text-4xl font-bold text-tertiary">District 4</p>
+                    <p class="text-3xl">20%</p>
+                </div>
+                <div> 
+                    <p class="text-4xl font-bold text-tertiary">District 5</p>
+                    <p class="text-3xl">20%</p>
+                </div>
+                <div> 
+                    <p class="text-4xl font-bold text-tertiary">District 6</p>
+                    <p class="text-3xl">20%</p>
+                </div>
+                <div> 
+                    <p class="text-4xl font-bold text-tertiary">District 7</p>
+                    <p class="text-3xl">20%</p>
+                </div>
+                <div> 
+                    <p class="text-4xl font-bold text-tertiary">District 8</p>
+                    <p class="text-3xl">20%</p>
+                </div>
+                <div> 
+                    <p class="text-4xl font-bold text-tertiary">District 9</p>
                     <p class="text-3xl">20%</p>
                 </div>
             </div>
@@ -142,4 +162,5 @@
 
 
 </body>
+{%endblock%}
 </html>
