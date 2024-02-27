@@ -6,3 +6,7 @@
 .bg-mosaique {
     background-image: url(./mosaique.png);
 }
+
+.bg-mosaique-f {
+    background-image: url(./mosaiquefonce.png);
+}
