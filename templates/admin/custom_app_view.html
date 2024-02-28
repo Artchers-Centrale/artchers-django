@@ -1,0 +1,76 @@
+{% extends 'admin/change_list.html' %}
+{% load static %}
+{% load static tailwind_tags %}
+
+{% block pagination %}{% endblock %}
+{% block filters %}{% endblock filters %}
+{% block object-tools %}{% endblock object-tools %}
+{% block search %}{% endblock %}
+ 
+{% block breadcrumbs %}
+{% tailwind_css %}
+
+<div class="breadcrumbs">
+  <a href="{% url 'admin:index' %}">Home</a>
+  {% if page_name %} &rsaquo; {{ page_name }}{% endif %}
+</div>
+
+
+{% endblock %}
+ 
+{% block result_list %}
+<div class="flex flex-row place-items-center py-10">
+<div class="grow w-1/4">
+  <canvas id="myChart"></canvas>
+</div>
+<div class="grow w-1/4">
+  <canvas id="pourcent"></canvas>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script>
+  const ctx = document.getElementById('myChart');
+  const ctxB = document.getElementById('pourcent')
+
+  new Chart(ctx, {
+    type: 'pie',
+    data: {
+      labels: {{disList|safe}},
+      datasets: [{
+        label: 'Nombre de votes',
+        data: {{nbrVote|safe}},
+        borderWidth: 1
+      }]
+    },
+    options: {
+      plugins:{
+        title:{
+          display:true,
+          text:"Pourcentage de votes par district"
+        }
+      }
+    }
+  });
+
+  new Chart(ctxB, {
+    type: 'pie',
+    data: {
+      labels: {{disList|safe}},
+      datasets: [{
+        label: 'Nombre de votes',
+        data: {{pourcent|safe}},
+        borderWidth: 1
+      }]
+    },
+    options: {
+      plugins:{
+        title:{
+          display:true,
+          text:"Nombre de votes par district"
+        }
+      }
+    }
+  });
+</script>
+{% endblock result_list %}

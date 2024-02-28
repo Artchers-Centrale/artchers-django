@@ -859,12 +859,20 @@ select {
   display: inline-flex;
 }
 
+.table {
+  display: table;
+}
+
 .grid {
   display: grid;
 }
 
 .hidden {
   display: none;
+}
+
+.w-1\/4 {
+  width: 25%;
 }
 
 .w-4 {
