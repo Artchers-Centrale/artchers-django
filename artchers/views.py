@@ -29,7 +29,7 @@ def page_vote(request):
         mail = form.cleaned_data['mail']
         isAlreadyDone = vote.objects.all().filter(mail=mail).count()
         if(isAlreadyDone != 0):
-            return redirect("vote/?successForm=AlreadyDone")
+            return redirect("./vote?successForm=AlreadyDone")
         nom = form.cleaned_data['nom']
         prenom = form.cleaned_data['prenom']
         district = form.cleaned_data['vote']
@@ -43,7 +43,7 @@ def page_vote(request):
         )
         envoiVote = vote(prenom = prenom,nom =nom, mail = mail, vote = district, isConfirmed = False, key = key)
         envoiVote.save()
-        return redirect("vote?successForm=True")
+        return redirect("./vote?successForm=True")
     else:
         form = voteForm()
         print(form.errors.as_data())
@@ -59,9 +59,12 @@ def one_time_link(request,access_code=0):
         user.save()
 
         OneTimeLinkModel.objects.filter(one_time_code=access_code).delete()
-        return HttpResponse("Hey, your linked worked. Make sure to download as it won't work again.")
+        return render(request,"confirm.html")
 
     elif not OneTimeLinkModel.objects.filter(one_time_code=access_code).exists():
-        return HttpResponse("Bad or expired link.")
+        return render(request,"badLink.html")
     else:
-        return HttpResponse("Bad or expired link.")
+        return render(request,"badLink.html")
+    
+def about(request):
+    return render(request,"about.html")
