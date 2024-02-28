@@ -19,10 +19,10 @@ def mailCentrale(mail):
 
 
 class voteForm(forms.Form):
-    nom = forms.CharField(label = "Votre nom",max_length=100)
-    prenom = forms.CharField(label = "Votre prénom",max_length=100)
-    mail = forms.EmailField(label="Votre mail en xyz@xyz.centralelille.fr", max_length=200, widget=forms.TextInput(attrs={'placeholder': 'xyz@xyz.centralelille.fr'}))
-    vote = forms.ModelChoiceField(queryset=district.objects.all(), widget=forms.Select)
+    nom = forms.CharField(label = "Votre nom",max_length=100, widget=forms.TextInput(attrs={'placeholder': 'Votre nom'}))
+    prenom = forms.CharField(label = "Votre prénom",max_length=100, widget=forms.TextInput(attrs={'placeholder': 'Votre prénom'}))
+    mail = forms.EmailField(label="Votre mail en xyz@xyz.centralelille.fr", max_length=200, widget=forms.TextInput(attrs={'placeholder': 'Votre mail en xyz@xyz.centralelille.fr'}))
+    vote = forms.ModelChoiceField(label="Votre vote est pour le district :", queryset=district.objects.all(), widget=forms.Select)
 
     def cleanCentrale(self):
         mailtest = self.cleaned_data["mail"]

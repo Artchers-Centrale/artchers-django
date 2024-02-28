@@ -1,5 +1,7 @@
 {% load static %}
 {% load static tailwind_tags %}
+{% load widget_tweaks %}
+
 
 
 
@@ -126,24 +128,21 @@
                 <div class="modal-content p-4">
                     <h2 class="text-xl font-bold text-secondary">Confirmer votre vote :</h2>
                     <p>Pour confirmer votre vote veuillez remplir ce formulaire :</p>
-                    <form method="post">
+                    <form method="post" class="pt-5">
                         {% csrf_token %}
-                        {{form.nom.label}}
-                        <br>
-                        {{ form.nom }}
-                        <br>
-                        {{form.prenom.label}}
-                        <br>
-                        {{ form.prenom }}
-                        <br>
-                        {{form.mail.label}}
-                        <br>
-                        {{ form.mail }}
-                        <br>
-                        {{form.vote.name}}
-                        <br>
-                        {{ form.vote }}
-                        <br>
+                        <div class="relative z-0 w-full mb-5 group">
+                            {%render_field form.nom class="block py-2.5 px-0 w-full text-sm text-secondary bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-secondary peer"%}
+                        </div>
+                        <div class="relative z-0 w-full mb-5 group">
+                            {%render_field form.prenom class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-secondary peer"%}
+                        </div>
+                        <div class="relative z-0 w-full mb-5 group">
+                            {%render_field form.mail class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-secondary peer"%}
+                        </div>
+                        <div class="relative z-0 w-full mb-5 group">
+                        {%render_field form.vote.label%}
+                        {%render_field form.vote class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-secondary focus:border-secondary block w-full p-2.5"%}
+                        </div>
                     <button type="submit" value="Submit" class="bg-green-500 hover:bg-green-700 transition duration-500 text-white font-bold py-2 px-4 rounded mt-4">Envoyer</button>
                     </form>
                     <button id="closeModal" class="bg-blue-500 hover:bg-blue-700 transition duration-500 text-white font-bold py-2 px-4 rounded mt-4">Annuler</button>
