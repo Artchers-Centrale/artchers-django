@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.mail import send_mail
 import random
 import string
@@ -20,13 +20,16 @@ def generate_link():
 def index(request):
     return render(request, "index.html")
 
+
+
 def page_vote(request):
     form = voteForm(request.POST)
+    successForm = request.GET.get('successForm',False)
     if form.is_valid():
         mail = form.cleaned_data['mail']
         isAlreadyDone = vote.objects.all().filter(mail=mail).count()
         if(isAlreadyDone != 0):
-            return HttpResponseRedirect("/AlreadyDone/")
+            return redirect("vote/?successForm=AlreadyDone")
         nom = form.cleaned_data['nom']
         prenom = form.cleaned_data['prenom']
         district = form.cleaned_data['vote']
@@ -40,11 +43,14 @@ def page_vote(request):
         )
         envoiVote = vote(prenom = prenom,nom =nom, mail = mail, vote = district, isConfirmed = False, key = key)
         envoiVote.save()
-        return HttpResponseRedirect("/thanks/")
+        return redirect("vote?successForm=True")
     else:
         form = voteForm()
-    context = {'form':form}
+        print(form.errors.as_data())
+    context = {'form':form, "successForm":successForm}
     return render(request,'vote.html', context)
+
+
 
 def one_time_link(request,access_code=0):
     if OneTimeLinkModel.objects.filter(one_time_code=access_code).exists():

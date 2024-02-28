@@ -9,10 +9,11 @@ def mailCentrale(mail):
     test = mail.split('@')
     print(test[1])
     if (test[1] == 'centrale.centralelille.fr') or (test[1] == 'enscl.centralelille.fr') or (test[1] == 'iteem.centralelille.fr') :
-        return
+        return mail
     raise ValidationError(
             _("%(value)s n'est pas un mail sous le format xyz@xyz.centralelille.fr"),
             params={"value": mail},
+            code="badMail"
         )
 
 
@@ -20,5 +21,10 @@ def mailCentrale(mail):
 class voteForm(forms.Form):
     nom = forms.CharField(label = "Votre nom",max_length=100)
     prenom = forms.CharField(label = "Votre prénom",max_length=100)
-    mail = forms.EmailField(label="Votre mail en xyz@xyz.centralelille.fr", validators=[mailCentrale], max_length=200, widget=forms.TextInput(attrs={'placeholder': 'xyz@xyz.centralelille.fr'}))
+    mail = forms.EmailField(label="Votre mail en xyz@xyz.centralelille.fr", max_length=200, widget=forms.TextInput(attrs={'placeholder': 'xyz@xyz.centralelille.fr'}))
     vote = forms.ModelChoiceField(queryset=district.objects.all(), widget=forms.Select)
+
+    def cleanCentrale(self):
+        mailtest = self.cleaned_data["mail"]
+        mailCentrale(mailtest)
+        return mailtest
