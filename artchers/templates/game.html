@@ -1,0 +1,60 @@
+{% load static %}
+{% load static tailwind_tags %}
+
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>HTML5 Pacman</title>
+    
+    <style type="text/css">
+      #pacman {
+        height:450px;
+        width:342px;
+        margin:20px auto;
+      }
+      #shim { 
+        position:absolute;
+        visibility:hidden
+      }
+      body { width:342px; margin:0px auto; font-family:sans-serif; }
+      a { text-decoration:none; }
+    </style>
+
+</head>
+
+<body>
+  
+  <div id="shim">shim for font face</div>
+
+  <h1>HTML5 Pacman</h1>
+
+  <div id="pacman"></div>
+  <script src="{%static 'game/game.js'%}"></script>
+  <script src="{%static 'game/modernizr-1.5.min.js'%}"></script>
+
+  <script>
+
+    var el = document.getElementById("pacman");
+
+    if (Modernizr.canvas && Modernizr.localstorage && 
+        Modernizr.audio && (Modernizr.audio.ogg || Modernizr.audio.mp3)) {
+      window.setTimeout(function () { PACMAN.init(el, "./"); }, 0);
+    } else { 
+      el.innerHTML = "Sorry, needs a decent browser<br /><small>" + 
+        "(firefox 3.6+, Chrome 4+, Opera 10+ and Safari 4+)</small>";
+    }
+
+        var audio_files = [
+            ["start", "{%static 'game/audio/opening_song.mp3'%}"],
+            ["die", "{%static 'game/audio/die.mp3'%}"],
+            ["eatghost", "{%static 'game/audio/eatghost.mp3'%}"],
+            ["eatpill", "{%static 'game/audio/eatpill.mp3'%}"],
+            ["eating", "{%static 'game/audio/eating.mp3'%}"],
+            ["eating2", "{%static 'game/audio/eating.mp3'%}"]
+        ];
+  </script>
+
+</body>
+</html>

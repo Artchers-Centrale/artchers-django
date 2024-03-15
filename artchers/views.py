@@ -71,3 +71,6 @@ def about(request):
 
 def cgi(request):
     return render(request,"cgi.html")
+
+def game(request):
+    return render(request,"game.html")
