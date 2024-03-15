@@ -154,3 +154,5 @@ EMAIL_HOST = 'ssl0.ovh.net'
 EMAIL_PORT = 587
 EMAIL_HOST_USER = 'contact@ic-art.fr'
 EMAIL_HOST_PASSWORD = 'Demarchage'
+
+STATIC_ROOT = os.path.join(BASE_DIR, 'assets')

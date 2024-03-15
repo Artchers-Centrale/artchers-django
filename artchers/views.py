@@ -68,3 +68,6 @@ def one_time_link(request,access_code=0):
     
 def about(request):
     return render(request,"about.html")
+
+def cgi(request):
+    return render(request,"cgi.html")

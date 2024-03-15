@@ -30,7 +30,7 @@
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
                 </svg>
-              <p class="text-xl">Découvrir</p>
+              <p class="text-xl">Nos events</p>
             </a>
 
 
@@ -58,13 +58,20 @@
                         </a>
                     </div>
 
-                    <div><a href="../"><img src="{%static 'imgs/main/artchers_texte.png'%}" alt="Artchers" class="max-w-36"></a></div>
+                    <div>
+                        <div class="inline-flex">
+                        <img src="{%static 'imgs/main/fleche_noir.png'%}" alt="fleche" class="rotate-180 max-w-36">
+                        <a href="./"><img src="{%static 'imgs/main/artchers_texte.png'%}" alt="Artchers" class="max-w-36"></a>
+                        <img src="{%static 'imgs/main/fleche_noir.png'%}" alt="fleche" class="max-w-36">
+                        </div>
+                    </div>
                     <div class="inline-flex gap-5 text-xl">
-                        <div>Qui sommes-nous ?</div>
-                        <div>Nos sponsors</div>
+                        <div>Trombinoscope</div>
+                        <div>Défis</div>
                     </div>
                 </div>
             </div>
+
 
             <div class="border rounded-full border-white border-2 px-20 text-center py-3"><p class="text-xl">Liste BDA Centrale Lille 2023-2024</p></div>
         </div>
@@ -119,9 +126,16 @@
 
 
 
-        <footer>
-            <p class="text-center pt-3">© 2024 - Artchers, liste BDA de l'Ecole Centrale de Lille</p>
-        </footer>
+    <footer>
+        <div class="flex-col">
+            <div></div>
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+
+        <p class="text-center pt-3">© 2024 - Artchers, liste BDA de l'Ecole Centrale de Lille - <a href="cgi" class="hover:text-tertiary transition duration-500">Conditions d'utilisation</a></p>
+    </footer>
 
         <div id="modal" class="fixed top-0 left-0 w-full h-full flex items-center justify-center hidden">
             <div class="modal-dialog bg-white rounded shadow-lg sm:w-2/3 md:w-1/2 lg:w-1/3 xl:w-1/4">
@@ -131,7 +145,7 @@
                     <form method="post" class="pt-5">
                         {% csrf_token %}
                         <div class="relative z-0 w-full mb-5 group">
-                            {%render_field form.nom class="block py-2.5 px-0 w-full text-sm text-secondary bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-secondary peer"%}
+                            {%render_field form.nom class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-secondary peer"%}
                         </div>
                         <div class="relative z-0 w-full mb-5 group">
                             {%render_field form.prenom class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none focus:outline-none focus:ring-0 focus:border-secondary peer"%}
