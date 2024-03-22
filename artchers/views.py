@@ -2,11 +2,12 @@ from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 from django.shortcuts import render, redirect
 from django.core.mail import send_mail
+from django.utils import timezone
 import random
 import string
 
-from .forms import voteForm
-from .models import district, OneTimeLinkModel, vote
+from .forms import voteForm, gameForm
+from .models import district, OneTimeLinkModel, vote, Pacman
 
 def randomString(stringLength=20):
     letters = string.ascii_lowercase
@@ -73,4 +74,16 @@ def cgi(request):
     return render(request,"cgi.html")
 
 def game(request):
-    return render(request,"game.html")
+    form = gameForm(request.POST)
+    if form.is_valid():
+        pseudo = form.cleaned_data['pseudo']
+        score = form.cleaned_data['score']
+        print(score)
+        envoiGame = Pacman(pseudo = pseudo,score =score, date=timezone.localtime())
+        envoiGame.save()
+        return redirect("./game?scoreSaved=True")
+    else:
+        form = gameForm()
+
+    context={"form":form}
+    return render(request,"game.html",context)

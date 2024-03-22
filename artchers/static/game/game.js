@@ -823,7 +823,7 @@ var PACMAN = (function () {
     }
 
     function keyDown(e) {
-        if (e.keyCode === KEY.N) {
+        if (e.keyCode === KEY.ENTER) {
             startNewGame();
         } else if (e.keyCode === KEY.S) {
             audio.disableSound();
@@ -849,6 +849,9 @@ var PACMAN = (function () {
         user.loseLife();
         if (user.getLives() > 0) {
             startLevel();
+        }
+        if(user.getLives()===0){
+            sendData(user.theScore());
         }
     }
 
@@ -892,7 +895,7 @@ var PACMAN = (function () {
         ctx.fillStyle = "#FFFF00";
         ctx.font      = "14px Calibri";
         ctx.fillText("Score: " + user.theScore(), 30, textBase);
-        ctx.fillText("Level: " + level, 260, textBase);
+        ctx.fillText("Niveau : " + level, 260, textBase);
     }
 
     function redrawBlock(pos) {
@@ -958,7 +961,7 @@ var PACMAN = (function () {
         } else if (state === WAITING && stateChanged) {            
             stateChanged = false;
             map.draw(ctx);
-            dialog("Appuyez sur N pour démarrer la partie !");            
+            dialog("Appuyez sur ENTREE pour démarrer la partie !");            
         } else if (state === EATEN_PAUSE && 
                    (tick - timerStart) > (Pacman.FPS / 3)) {
             map.draw(ctx);
@@ -985,7 +988,7 @@ var PACMAN = (function () {
                 if (diff !== lastTime) { 
                     lastTime = diff;
                     map.draw(ctx);
-                    dialog("Starting in: " + diff);
+                    dialog("Cela commence dans : " + diff);
                 }
             }
         } 
@@ -1246,3 +1249,4 @@ Object.prototype.clone = function () {
     }
     return newObj;
 };
+

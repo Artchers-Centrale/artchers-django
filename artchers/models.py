@@ -26,3 +26,10 @@ class vote(models.Model):
 
 class OneTimeLinkModel(models.Model):
     one_time_code = models.CharField(max_length=20)
+
+class Pacman(models.Model):
+    pseudo = models.CharField(max_length=200)
+    score = models.BigIntegerField()
+    date = models.DateField()
+    def __str__(self) -> str:
+        return str(self.pseudo)

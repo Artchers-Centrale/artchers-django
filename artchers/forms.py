@@ -28,3 +28,7 @@ class voteForm(forms.Form):
         mailtest = self.cleaned_data["mail"]
         mailCentrale(mailtest)
         return mailtest
+    
+class gameForm(forms.Form):
+    pseudo = forms.CharField(label = "Votre pseudo",max_length=100, widget=forms.TextInput(attrs={'placeholder': 'Votre pseudo'}))
+    score = forms.IntegerField(label="Votre score")

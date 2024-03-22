@@ -1,5 +1,5 @@
 from django.contrib import admin
-from artchers.models import district, vote
+from artchers.models import district, vote, Pacman
 from .views import custom_app_view
 from django.urls import path
 
@@ -24,3 +24,5 @@ admin_site = CustomAppAdmin()
 
 admin.site.register(district)
 admin.site.register(vote)
+admin.site.register(Pacman)
+
