@@ -825,6 +825,8 @@ var PACMAN = (function () {
     function keyDown(e) {
         if (e.keyCode === KEY.ENTER) {
             startNewGame();
+        } else if (e.keyCode === KEY.APOSTROPHE){
+            audio.play('spies');
         } else if (e.keyCode === KEY.S) {
             audio.disableSound();
             localStorage["soundDisabled"] = !soundDisabled();
