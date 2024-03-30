@@ -24,20 +24,20 @@
 <body class="overflow-x-hidden bg-primary font-bebas bg-mosaique bg-repeat]">
     
     
-    <header class="font-bebas px-10 h-40 py-10">
-        <div class="flex flex-row justify-between  place-items-center">
-            <a class="inline-flex gap-2 border rounded-full border-white border-2 px-32 py-3 hover:text-tertiary transition duration-500" href="COUCOU">
+    <header class="font-bebas px-10 h-40 py-10 hidden xl:block">
+        <div class="flex flex-row justify-between place-items-center">
+            <a class="inline-flex gap-2 border rounded-full border-white border-2 px-32 py-4 hover:text-tertiary transition duration-500" href="COUCOU">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 0 0 8.716-6.747M12 21a9.004 9.004 0 0 1-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 0 1 7.843 4.582M12 3a8.997 8.997 0 0 0-7.843 4.582m15.686 0A11.953 11.953 0 0 1 12 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0 1 21 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0 1 12 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 0 1 3 12c0-1.605.42-3.113 1.157-4.418" />
                 </svg>
-              <p class="text-xl">Nos events</p>
+              <p class="text-xl">Events</p>
             </a>
 
 
             <div class="grow border rounded-full border-white border-2 mx-10 px-5">
                 <div class="flex flex-row justify-between place-items-center">
                     <div class="inline-flex gap-5 text-xl">
-                        <a href="COUCOU" class="hover:text-tertiary">
+                        <a href="https://www.facebook.com/profile.php?id=61556681844629" class="hover:text-tertiary">
                             <svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
                             viewBox="0 0 310 310" xml:space="preserve" class="w-6 h-6 hover:fill-tertiary transition duration-500" >
                             <g id="XMLID_834_">
@@ -49,7 +49,7 @@
                             </g>    
                             </svg>
                         </a>
-                        <a href="COUCOU">
+                        <a href="https://www.instagram.com/briqueduwea/">
                             <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" class="w-6 h-6 hover:stroke-tertiary transition duration-500">
                             <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#0F0F0F"/>
                             <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#0F0F0F"/>
@@ -67,15 +67,54 @@
                     </div>
                     <div class="inline-flex gap-5 text-xl">
                         <div>Trombinoscope</div>
-                        <div>Défis</div>
+                        <a href="https://docs.google.com/spreadsheets/d/1keF1zHBt5TpYmDxTWCPGiVzx4UAdZdJRaW_cQcd41_A/edit?usp=sharing" class="hover:text-tertiary transition duration-500"><div>Défis</div></a>
+                        <a href="game" class="hover:text-tertiary transition duration-500">Jeu</a>
                     </div>
                 </div>
             </div>
 
-
-            <div class="border rounded-full border-white border-2 px-20 text-center py-3"><p class="text-xl">Liste BDA Centrale Lille 2023-2024</p></div>
         </div>
     </header>
+
+    <header class="font-bebas h-40 pt-5 pb-10 block xl:hidden">
+        <div class="grid grid-rows-1 place-items-center">
+           <div class="grow"><a href="./"><img src="{%static 'imgs/main/artchers_texte.png'%}" alt="Artchers" class="max-w-36"></a> </div>
+        </div>
+        <div class="flex flex-col place-items-center">
+            <div class="grow mx-10 px-5 pb-2">
+                <div class="inline-flex gap-5 text-xl">
+                    <div>Liste</div>
+                    <a href="https://docs.google.com/spreadsheets/d/1keF1zHBt5TpYmDxTWCPGiVzx4UAdZdJRaW_cQcd41_A/edit?usp=sharing" class="hover:text-tertiary transition duration-500"><div>Défis</div></a>
+                    <a href="game" class="hover:text-tertiary transition duration-500">Jeu</a>
+                </div>
+            </div>
+            <div class="grow border mx-10 px-5">
+                <div class="inline-flex text-xl align-center gap-5">
+                <a href="COUCOU" class="hover:text-tertiary">
+                    <svg fill="#000000" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
+                    viewBox="0 0 310 310" xml:space="preserve" class="w-6 h-6 hover:fill-tertiary transition duration-500" >
+                    <g id="XMLID_834_">
+                   <path id="XMLID_835_" d="M81.703,165.106h33.981V305c0,2.762,2.238,5,5,5h57.616c2.762,0,5-2.238,5-5V165.765h39.064
+                       c2.54,0,4.677-1.906,4.967-4.429l5.933-51.502c0.163-1.417-0.286-2.836-1.234-3.899c-0.949-1.064-2.307-1.673-3.732-1.673h-44.996
+                       V71.978c0-9.732,5.24-14.667,15.576-14.667c1.473,0,29.42,0,29.42,0c2.762,0,5-2.239,5-5V5.037c0-2.762-2.238-5-5-5h-40.545
+                       C187.467,0.023,186.832,0,185.896,0c-7.035,0-31.488,1.381-50.804,19.151c-21.402,19.692-18.427,43.27-17.716,47.358v37.752H81.703
+                       c-2.762,0-5,2.238-5,5v50.844C76.703,162.867,78.941,165.106,81.703,165.106z"/>
+                    </g>    
+                    </svg>
+                </a>
+                <a href="COUCOU">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" class="w-6 h-6 hover:stroke-tertiary transition duration-500">
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M12 18C15.3137 18 18 15.3137 18 12C18 8.68629 15.3137 6 12 6C8.68629 6 6 8.68629 6 12C6 15.3137 8.68629 18 12 18ZM12 16C14.2091 16 16 14.2091 16 12C16 9.79086 14.2091 8 12 8C9.79086 8 8 9.79086 8 12C8 14.2091 9.79086 16 12 16Z" fill="#0F0F0F"/>
+                    <path d="M18 5C17.4477 5 17 5.44772 17 6C17 6.55228 17.4477 7 18 7C18.5523 7 19 6.55228 19 6C19 5.44772 18.5523 5 18 5Z" fill="#0F0F0F"/>
+                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1.65396 4.27606C1 5.55953 1 7.23969 1 10.6V13.4C1 16.7603 1 18.4405 1.65396 19.7239C2.2292 20.8529 3.14708 21.7708 4.27606 22.346C5.55953 23 7.23969 23 10.6 23H13.4C16.7603 23 18.4405 23 19.7239 22.346C20.8529 21.7708 21.7708 20.8529 22.346 19.7239C23 18.4405 23 16.7603 23 13.4V10.6C23 7.23969 23 5.55953 22.346 4.27606C21.7708 3.14708 20.8529 2.2292 19.7239 1.65396C18.4405 1 16.7603 1 13.4 1H10.6C7.23969 1 5.55953 1 4.27606 1.65396C3.14708 2.2292 2.2292 3.14708 1.65396 4.27606ZM13.4 3H10.6C8.88684 3 7.72225 3.00156 6.82208 3.0751C5.94524 3.14674 5.49684 3.27659 5.18404 3.43597C4.43139 3.81947 3.81947 4.43139 3.43597 5.18404C3.27659 5.49684 3.14674 5.94524 3.0751 6.82208C3.00156 7.72225 3 8.88684 3 10.6V13.4C3 15.1132 3.00156 16.2777 3.0751 17.1779C3.14674 18.0548 3.27659 18.5032 3.43597 18.816C3.81947 19.5686 4.43139 20.1805 5.18404 20.564C5.49684 20.7234 5.94524 20.8533 6.82208 20.9249C7.72225 20.9984 8.88684 21 10.6 21H13.4C15.1132 21 16.2777 20.9984 17.1779 20.9249C18.0548 20.8533 18.5032 20.7234 18.816 20.564C19.5686 20.1805 20.1805 19.5686 20.564 18.816C20.7234 18.5032 20.8533 18.0548 20.9249 17.1779C20.9984 16.2777 21 15.1132 21 13.4V10.6C21 8.88684 20.9984 7.72225 20.9249 6.82208C20.8533 5.94524 20.7234 5.49684 20.564 5.18404C20.1805 4.43139 19.5686 3.81947 18.816 3.43597C18.5032 3.27659 18.0548 3.14674 17.1779 3.0751C16.2777 3.00156 15.1132 3 13.4 3Z" fill="#0F0F0F"/>
+                    </svg>
+                </a>
+                </div>
+            </div>
+            </div>
+        </div>
+    </header>
+
     {%if successForm == 'True'%}
     <div class="flex items-center p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50" role="alert">
         <svg class="flex-shrink-0 inline w-4 h-4 me-3" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
@@ -99,36 +138,61 @@
       </div>
     {%endif%}
 
-    <div class="grid grid-cols-2 place-items-center px-5 py-10">
-        <div class="max-w-screen-sm">
-            <h1 class="text-5xl font-bold text-secondary">District 1</h1>
-            <p class="text-3xl font-semibold text-quaternary py-5">Devise du district, composition</p>
-            <p class="text-lg pb-5 font-montserrat">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mattis malesuada aliquam. Mauris in felis vel est vestibulum tempor. Vestibulum ante nunc, sodales et risus vel, commodo consequat metus. Vivamus blandit eleifend est, quis aliquet ex egestas facilisis. Morbi sit amet commodo augue. Pellentesque rutrum metus id semper aliquam. Curabitur consectetur egestas sapien vitae fermentum. In ornare neque et varius dapibus. In sapien arcu, egestas sit amet libero sit amet, consectetur elementum enim. Pellentesque ut orci id neque varius ultricies. Suspendisse et vulputate ipsum. In hac habitasse platea dictumst. Curabitur ut justo blandit leo aliquam consequat. Vivamus rhoncus diam enim, at euismod elit porttitor eu. Maecenas congue egestas eros, vel volutpat nisi efficitur gravida.</p>
+    {%for dist in district%}
+    {%if not dist.id|divisibleby:"2"%}
+    <div class="grid xl:grid-cols-2 place-items-center px-5 py-10">
+        <div class="max-w-screen-sm order-2 xl:order-1">
+            <h1 class="text-5xl font-bold text-secondary">District {{dist.id}} : {{dist.nom}}</h1>
+            <p class="text-3xl font-semibold text-quaternary py-5">Composition : {{dist.composition}}</p>
+            <p class="text-lg pb-5 font-montserrat">{{dist.description}}</p>
             <button class="px-5 py-2 bg-secondary border-secondary text-white rounded-lg inline-block box-border border-2 rounded-x1 hover:bg-primary hover:text-secondary duration-1000 h-14 text-2xl" id="openModal">Voter pour ce district</button>
 
         </div>
-        <div>
-            <div><img src="{{MEDIA_URL}}/images/test.jpg" alt="blog image" class="rounded-lg h-96 w-full max-h-96 object-fill"></div>
+        {%if dist.is_eliminated%}
+        <div class="order-1 xl:order-2">
+            <div><img src="{{MEDIA_URL}}{{dist.image_el}}" alt="blog image" class="rounded-lg h-96 w-full max-h-96 object-fill max-w-screen-lg pb-10 xl:pb-0"></div>
         </div>
-    </div>
+        {%else%}
+        <div class="order-1 xl:order-1">
+            <div><img src="{{MEDIA_URL}}{{dist.image}}" alt="blog image" class="rounded-lg h-96 w-full max-h-96 object-fill max-w-screen-lg pb-10 xl:pb-0"></div>
+        </div>
+        {%endif%}
 
-    <div class="grid grid-cols-2 place-items-center px-5 py-20">
-        <div>
-            <div><img src="{{MEDIA_URL}}/images/test.jpg" alt="blog image" class="rounded-lg h-96 w-full max-h-96 object-fill"></div>
-        </div>
-        <div class="max-w-screen-sm">
-            <h1 class="text-5xl font-bold text-secondary">District 1</h1>
-            <p class="text-3xl font-semibold text-quaternary py-5">Devise du district, composition</p>
-            <p class="text-lg pb-5 font-montserrat">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc mattis malesuada aliquam. Mauris in felis vel est vestibulum tempor. Vestibulum ante nunc, sodales et risus vel, commodo consequat metus. Vivamus blandit eleifend est, quis aliquet ex egestas facilisis. Morbi sit amet commodo augue. Pellentesque rutrum metus id semper aliquam. Curabitur consectetur egestas sapien vitae fermentum. In ornare neque et varius dapibus. In sapien arcu, egestas sit amet libero sit amet, consectetur elementum enim. Pellentesque ut orci id neque varius ultricies. Suspendisse et vulputate ipsum. In hac habitasse platea dictumst. Curabitur ut justo blandit leo aliquam consequat. Vivamus rhoncus diam enim, at euismod elit porttitor eu. Maecenas congue egestas eros, vel volutpat nisi efficitur gravida.</p>
+    </div>
+      {%else%}
+
+      <div class="grid xl:grid-cols-2 place-items-center px-5 py-10">
+        <div class="max-w-screen-sm order-2 xl:order-2">
+            <h1 class="text-5xl font-bold text-secondary">District {{dist.id}} : {{dist.nom}}</h1>
+            <p class="text-3xl font-semibold text-quaternary py-5">Composition : {{dist.composition}}</p>
+            <p class="text-lg pb-5 font-montserrat">{{dist.description}}</p>
             <button class="px-5 py-2 bg-secondary border-secondary text-white rounded-lg inline-block box-border border-2 rounded-x1 hover:bg-primary hover:text-secondary duration-1000 h-14 text-2xl" id="openModal">Voter pour ce district</button>
-        </div>
-    </div>
 
+        </div>
+        {%if dist.is_eliminated%}
+        <div class="order-1 xl:order-1">
+            <div><img src="{{MEDIA_URL}}{{dist.image_el}}" alt="blog image" class="rounded-lg h-96 w-full max-h-96 object-fill max-w-screen-lg pb-10 xl:pb-0"></div>
+        </div>
+        {%else%}
+        <div class="order-1 xl:order-1">
+            <div><img src="{{MEDIA_URL}}{{dist.image}}" alt="blog image" class="rounded-lg h-96 w-full max-h-96 object-fill max-w-screen-lg pb-10 xl:pb-0"></div>
+        </div>
+        {%endif%}
+    </div>
+      
+    {%endif%}
+
+    
+    {%endfor%}
 
 
     <footer>
-        <div class="grid grid-rows-1 justify-items-center">
+        <div class="grid grid-rows-1 justify-items-center hidden xl:block">
             <img src="{%static 'imgs/sponsors/bandereau2.png'%}" alt="Nos sponsors" >
+        </div>
+
+        <div class="grid grid-rows-1 justify-items-center block xl:hidden">
+            <img src="{%static 'imgs/sponsors/bandereau.png'%}" alt="Nos sponsors" >
         </div>
 
         <p class="text-center pt-3">© 2024 - Artchers, liste BDA de l'Ecole Centrale de Lille - <a href="cgu" class="hover:text-tertiary transition duration-500">Conditions d'utilisation</a></p>

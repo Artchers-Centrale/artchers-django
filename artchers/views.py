@@ -24,6 +24,7 @@ def index(request):
 
 
 def page_vote(request):
+    district_query = district.objects.all()
     form = voteForm(request.POST)
     successForm = request.GET.get('successForm',False)
     if form.is_valid():
@@ -33,7 +34,7 @@ def page_vote(request):
             return redirect("./vote?successForm=AlreadyDone")
         nom = form.cleaned_data['nom']
         prenom = form.cleaned_data['prenom']
-        district = form.cleaned_data['vote']
+        district_vote = form.cleaned_data['vote']
         key = generate_link()
         send_mail(
             "Confirmation de vote",
@@ -42,13 +43,13 @@ def page_vote(request):
             [str(mail)],
             fail_silently=False,
         )
-        envoiVote = vote(prenom = prenom,nom =nom, mail = mail, vote = district, isConfirmed = False, key = key)
+        envoiVote = vote(prenom = prenom,nom =nom, mail = mail, vote = district_vote, isConfirmed = False, key = key)
         envoiVote.save()
         return redirect("./vote?successForm=True")
     else:
         form = voteForm()
         print(form.errors.as_data())
-    context = {'form':form, "successForm":successForm}
+    context = {'form':form, "successForm":successForm, 'district':district_query}
     return render(request,'vote.html', context)
 
 

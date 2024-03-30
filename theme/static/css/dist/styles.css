@@ -915,6 +915,10 @@ input[type='number']::-webkit-outer-spin-button,
   max-width: 28rem;
 }
 
+.max-w-screen-lg {
+  max-width: 1024px;
+}
+
 .max-w-screen-sm {
   max-width: 640px;
 }
@@ -944,10 +948,6 @@ input[type='number']::-webkit-outer-spin-button,
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
-}
-
-.grid-cols-2 {
-  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid-rows-1 {
@@ -1161,11 +1161,6 @@ input[type='number']::-webkit-outer-spin-button,
   padding-bottom: 0.625rem;
 }
 
-.py-20 {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-}
-
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
@@ -1339,7 +1334,7 @@ input[type='number']::-webkit-outer-spin-button,
 }
 
 .bg-mosaique {
-  background-image: url(./mosaique.png);
+  background-image: url(./mos.png);
 }
 
 .bg-mosaique-f {
@@ -1439,6 +1434,14 @@ input[type='number']::-webkit-outer-spin-button,
 }
 
 @media (min-width: 1280px) {
+  .xl\:order-1 {
+    order: 1;
+  }
+
+  .xl\:order-2 {
+    order: 2;
+  }
+
   .xl\:block {
     display: block;
   }
@@ -1449,6 +1452,10 @@ input[type='number']::-webkit-outer-spin-button,
 
   .xl\:w-1\/4 {
     width: 25%;
+  }
+
+  .xl\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .xl\:grid-cols-6 {
@@ -1466,6 +1473,10 @@ input[type='number']::-webkit-outer-spin-button,
   .xl\:px-20 {
     padding-left: 5rem;
     padding-right: 5rem;
+  }
+
+  .xl\:pb-0 {
+    padding-bottom: 0px;
   }
 
   .xl\:text-4xl {

@@ -4,6 +4,8 @@ from django.db import models
 
 class district(models.Model):
     nom = models.CharField(max_length=200)
+    composition = models.CharField(max_length=400)
+    description = models.TextField(max_length=3000)
     image = models.FileField(upload_to="images")
     image_el = models.FileField(upload_to="images")
     is_eliminated = models.BooleanField(default=False)
