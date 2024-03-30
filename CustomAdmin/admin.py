@@ -1,5 +1,5 @@
 from django.contrib import admin
-from artchers.models import district, vote, Pacman
+from artchers.models import district, vote, Pacman, Event
 from .views import custom_app_view
 from django.urls import path
 
@@ -22,7 +22,12 @@ class CustomAppAdmin(admin.AdminSite):
  
 admin_site = CustomAppAdmin()
 
+class PacmanAdmin(admin.ModelAdmin):
+    list_display = ["pseudo", "score"]
+    ordering = ["-score"]
+
 admin.site.register(district)
+admin.site.register(Event)
 admin.site.register(vote)
-admin.site.register(Pacman)
+admin_site.register(Pacman, PacmanAdmin)
 

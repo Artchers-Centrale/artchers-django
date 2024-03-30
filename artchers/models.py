@@ -35,3 +35,13 @@ class Pacman(models.Model):
     date = models.DateField()
     def __str__(self) -> str:
         return str(self.pseudo)
+    
+class Event(models.Model):
+    nom = models.CharField(max_length=200)
+    lieu = models.CharField(max_length=400)
+    date = models.CharField(max_length=200)
+    description = models.TextField(max_length=3000)
+    image = models.FileField(upload_to="images")
+    isShow = models.BooleanField(default=False)
+    def __str__(self) -> str:
+        return str(self.nom)

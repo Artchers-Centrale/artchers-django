@@ -1046,14 +1046,14 @@ input[type='number']::-webkit-outer-spin-button,
   border-color: rgb(187 156 69 / var(--tw-border-opacity));
 }
 
+.border-tertiary {
+  --tw-border-opacity: 1;
+  border-color: rgb(47 57 167 / var(--tw-border-opacity));
+}
+
 .border-white {
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
-}
-
-.bg-blue-500 {
-  --tw-bg-opacity: 1;
-  background-color: rgb(59 130 246 / var(--tw-bg-opacity));
 }
 
 .bg-gray-50 {
@@ -1079,6 +1079,11 @@ input[type='number']::-webkit-outer-spin-button,
 .bg-secondary {
   --tw-bg-opacity: 1;
   background-color: rgb(187 156 69 / var(--tw-bg-opacity));
+}
+
+.bg-tertiary {
+  --tw-bg-opacity: 1;
+  background-color: rgb(47 57 167 / var(--tw-bg-opacity));
 }
 
 .bg-transparent {
@@ -1353,11 +1358,6 @@ input[type='number']::-webkit-outer-spin-button,
   background-image: url(./70%.png);
 }
 
-.hover\:bg-blue-700:hover {
-  --tw-bg-opacity: 1;
-  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
-}
-
 .hover\:bg-green-700:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(21 128 61 / var(--tw-bg-opacity));
@@ -1366,6 +1366,11 @@ input[type='number']::-webkit-outer-spin-button,
 .hover\:bg-primary:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(209 235 250 / var(--tw-bg-opacity));
+}
+
+.hover\:bg-white:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
 .hover\:fill-tertiary:hover {

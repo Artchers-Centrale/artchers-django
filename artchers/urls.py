@@ -8,4 +8,5 @@ urlpatterns = [
     path('one_time_link/<str:access_code>', views.one_time_link, name='one_time_link'),
     path("cgu", views.cgu, name="cgu"),
     path("game", views.game, name="game"),
+    path("event",views.event, name="event"),
 ]

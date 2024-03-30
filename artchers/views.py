@@ -7,7 +7,7 @@ import random
 import string
 
 from .forms import voteForm, gameForm
-from .models import district, OneTimeLinkModel, vote, Pacman
+from .models import district, OneTimeLinkModel, vote, Pacman, Event
 
 def randomString(stringLength=20):
     letters = string.ascii_lowercase
@@ -88,3 +88,8 @@ def game(request):
 
     context={"form":form}
     return render(request,"game.html",context)
+
+def event(request):
+    event_query = Event.objects.all()
+    context={"event":event_query}
+    return render(request, "event.html",context)
