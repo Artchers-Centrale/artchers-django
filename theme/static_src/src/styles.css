@@ -11,6 +11,18 @@
     background-image: url(./mosaiquefonce.png);
 }
 
+.bg-index-30 {
+    background-image: url(./30%.png);
+}
+
+.bg-index-50 {
+    background-image: url(./50%.png);
+}
+
+.bg-index-70 {
+    background-image: url(./70%.png);
+}
+
 @layer base {
     input[type='number']::-webkit-outer-spin-button,
     input[type='number']::-webkit-inner-spin-button,
