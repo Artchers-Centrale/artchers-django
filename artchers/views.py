@@ -7,7 +7,7 @@ import random
 import string
 
 from .forms import voteForm, gameForm
-from .models import district, OneTimeLinkModel, vote, Pacman, Event
+from .models import district, OneTimeLinkModel, vote, Pacman, Event, Resultat
 
 def randomString(stringLength=20):
     letters = string.ascii_lowercase
@@ -19,7 +19,9 @@ def generate_link():
     return the_string
 
 def index(request):
-    return render(request, "index.html")
+    result_query = Resultat.objects.all()
+    context = {"result":result_query}
+    return render(request, "index.html",context)
 
 
 

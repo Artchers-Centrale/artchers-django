@@ -45,3 +45,13 @@ class Event(models.Model):
     isShow = models.BooleanField(default=False)
     def __str__(self) -> str:
         return str(self.nom)
+    
+class Resultat(models.Model):
+    district1 = models.IntegerField()
+    district2 = models.IntegerField()
+    district3 = models.IntegerField()
+    district4 = models.IntegerField()
+    district5 = models.IntegerField()
+    district6 = models.IntegerField()
+    def __str__(self) -> str:
+        return str("Résultat des votes, ne pas toucher")

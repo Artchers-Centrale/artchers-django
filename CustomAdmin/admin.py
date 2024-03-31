@@ -1,5 +1,5 @@
 from django.contrib import admin
-from artchers.models import district, vote, Pacman, Event
+from artchers.models import district, vote, Pacman, Event, Resultat
 from .views import custom_app_view
 from django.urls import path
 
@@ -29,5 +29,6 @@ class PacmanAdmin(admin.ModelAdmin):
 admin.site.register(district)
 admin.site.register(Event)
 admin.site.register(vote)
+admin.site.register(Resultat)
 admin_site.register(Pacman, PacmanAdmin)
 
