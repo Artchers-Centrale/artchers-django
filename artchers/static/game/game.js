@@ -12,7 +12,6 @@ var NONE        = 4,
     Pacman      = {};
 
 Pacman.FPS = 30;
-
 Pacman.Ghost = function (game, map, colour) {
 
     var position  = null,

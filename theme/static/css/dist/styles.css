@@ -915,6 +915,10 @@ input[type='number']::-webkit-outer-spin-button,
   max-width: 24rem;
 }
 
+.max-w-full {
+  max-width: 100%;
+}
+
 .max-w-md {
   max-width: 28rem;
 }
@@ -952,6 +956,10 @@ input[type='number']::-webkit-outer-spin-button,
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
+}
+
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .grid-rows-1 {
@@ -992,6 +1000,10 @@ input[type='number']::-webkit-outer-spin-button,
 
 .gap-2 {
   gap: 0.5rem;
+}
+
+.gap-4 {
+  gap: 1rem;
 }
 
 .gap-5 {
@@ -1276,6 +1288,10 @@ input[type='number']::-webkit-outer-spin-button,
   font-weight: 600;
 }
 
+.italic {
+  font-style: italic;
+}
+
 .leading-normal {
   line-height: 1.5;
 }
@@ -1429,6 +1445,10 @@ input[type='number']::-webkit-outer-spin-button,
 @media (min-width: 768px) {
   .md\:w-1\/2 {
     width: 50%;
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

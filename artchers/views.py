@@ -95,3 +95,6 @@ def event(request):
     event_query = Event.objects.all()
     context={"event":event_query}
     return render(request, "event.html",context)
+
+def trombi(request):
+    return render(request,"trombi.html")

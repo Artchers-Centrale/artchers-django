@@ -9,4 +9,5 @@ urlpatterns = [
     path("cgu", views.cgu, name="cgu"),
     path("game", views.game, name="game"),
     path("event",views.event, name="event"),
+    path("trombinoscope", views.trombi, name="trombi"),
 ]
