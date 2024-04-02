@@ -122,7 +122,7 @@
             <h1 class="text-5xl font-bold text-secondary">Bienvenue sur le site de Artchers !</h1>
             <p class="text-3xl font-semibold text-quaternary py-5">Liste au bureau des arts de l'Ecole Centrale de Lille 2024-2025</p>
             <p class="text-2xl pb-5">Nous sommes une liste composée de 24 étudiants passionnés et motivés pour faire de Centrale Lille un lieu d'art et de culture !</p>
-            <button class="px-5 py-2 bg-secondary border-secondary text-white rounded-lg inline-block box-border border-2 rounded-x1 hover:bg-primary hover:text-secondary duration-1000 h-14 text-2xl">Consulter notre programme</button>
+            <a href="{%static 'Programme.pdf'%}"><button class="px-5 py-2 bg-secondary border-secondary text-white rounded-lg inline-block box-border border-2 rounded-x1 hover:bg-primary hover:text-secondary duration-1000 h-14 text-2xl">Consulter notre programme</button></a>
         </div>
         <div class="order-1 lg:order-2 max-w-screen-sm pb-10 lg:pb-0">
             <img src="{%static 'imgs/main/artchers.png'%}" alt="logo liste">
@@ -131,7 +131,7 @@
 
 
     <footer class="px-10 pt-10 pb-3">
-        <div class="flex flex-col xl:flex-row gap-5">
+        <div class="flex flex-col 2xl:flex-row gap-5">
         <a href="./vote" class="flex flex-col border rounded-2xl border-white border-2 px-20 text-center py-3 place-items-center transition duration-500 hover:stroke-tertiary hover:text-tertiary hover:fill-tertiary bg-index-30">
             <svg height="100px" width="100px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" 
             viewBox="0 0 488 488" xml:space="preserve">
@@ -162,27 +162,27 @@
             <p class="text-3xl xl:text-4xl">Etat des votes :</p>
             <div class="grid grid-rows-6 xl:grid-cols-6 xl:grid-rows-1 place-items-center text-center pt-10">
                 <div>
-                    <p class="text-4xl font-bold text-tertiary">District 1</p>
+                    <p class="text-4xl font-bold text-tertiary">Archers</p>
                     <p class="text-3xl">{{r.district1}}%</p>
                 </div>
                 <div>
-                    <p class="text-4xl font-bold text-tertiary">District 2</p>
+                    <p class="text-4xl font-bold text-tertiary">Cuisiniers</p>
                     <p class="text-3xl">{{r.district2}}%</p>
                 </div>
                 <div> 
-                    <p class="text-4xl font-bold text-tertiary">District 3</p>
+                    <p class="text-4xl font-bold text-tertiary">Dessinateurs</p>
                     <p class="text-3xl">{{r.district3}}%</p>
                 </div>
                 <div> 
-                    <p class="text-4xl font-bold text-tertiary">District 4</p>
+                    <p class="text-4xl font-bold text-tertiary">Hackers</p>
                     <p class="text-3xl">{{r.district4}}%</p>
                 </div>
                 <div> 
-                    <p class="text-4xl font-bold text-tertiary">District 5</p>
+                    <p class="text-4xl font-bold text-tertiary">Musiciens</p>
                     <p class="text-3xl">{{r.district5}}%</p>
                 </div>
                 <div> 
-                    <p class="text-4xl font-bold text-tertiary">District 6</p>
+                    <p class="text-4xl font-bold text-tertiary">Strateges</p>
                     <p class="text-3xl">{{r.district6}}%</p>
                 </div>
             </div>

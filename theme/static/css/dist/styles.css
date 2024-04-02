@@ -1511,10 +1511,6 @@ input[type='number']::-webkit-outer-spin-button,
     grid-template-rows: repeat(1, minmax(0, 1fr));
   }
 
-  .xl\:flex-row {
-    flex-direction: row;
-  }
-
   .xl\:px-20 {
     padding-left: 5rem;
     padding-right: 5rem;
@@ -1527,5 +1523,11 @@ input[type='number']::-webkit-outer-spin-button,
   .xl\:text-4xl {
     font-size: 2.25rem;
     line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 1536px) {
+  .\32xl\:flex-row {
+    flex-direction: row;
   }
 }
